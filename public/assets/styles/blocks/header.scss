@@ -1,0 +1,27 @@
+.header {
+  @include vp-1024 {
+  }
+
+  &__container {
+  }
+
+  &__logo {
+    &:hover {
+    }
+  }
+
+  &__nav-w {
+    @include vp-1024 {
+    }
+  }
+
+  &__theme-toggle {
+    @include vp-768 {
+    }
+  }
+
+  &__year {
+    @include vp-1024 {
+    }
+  }
+}

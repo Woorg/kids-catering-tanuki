@@ -1,0 +1,117 @@
+.btn {
+  border: none;
+  padding: size(20px) size(24px);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 size(30px);
+  // margin: 10px 0;
+
+  background-color: $color-neon-blue;
+  color: $color-default-white;
+  cursor: pointer;
+  font-size: size(16px);
+  text-transform: uppercase;
+  transition: opacity $trans-default;
+
+  &--red {
+    // background-color: $color-torch-red;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--green {
+    background-color: $color-dark-spring-green;
+  }
+
+  &--white-smoke {
+    border: 1px solid $color-light-gray;
+    padding: size(6px) size(25px);
+    background-color: $color-white-smoke;
+    // background-color: $color-default-white;
+    color: $color-nero;
+    font-weight: 500;
+    @include vp-1024 {
+      padding: size(8px) size(25px);
+    }
+  }
+
+  &--big {
+    padding: size(20px) size(30px);
+    font-size: size(19px);
+    line-height: 1;
+    @include vp-768 {
+      padding: size(30px) size(30px);
+    }
+    .btn__icon {
+      width: size(18px);
+      height: size(18px);
+    }
+  }
+
+  &--rounded {
+    border-radius: size(50px);
+  }
+
+  &__icon {
+    width: size(12px);
+    height: size(12px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+}
+
+.nav-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 4px;
+  background-color: $color-tory-blue-15;
+  color: $color-tory-blue;
+  border-radius: 6px;
+  transition: $trans-default;
+  &:hover,
+  &:focus {
+    background-color: $color-tory-blue-25;
+    transition: $trans-default;
+  }
+
+  &--small {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+
+  &--prev {
+    // border-right: .5px solid $color-tory-blue-15;
+  }
+
+  &--next {
+    // border-left: .5px solid $color-tory-blue-15;
+
+    .nav-btn__icon {
+      rotate: -180deg;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+}

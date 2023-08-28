@@ -1,0 +1,41 @@
+.faq {
+  &__container {
+  }
+
+  &__title {
+    @include vp-1024 {
+      // grid-column: span 2 / span 2;
+    }
+  }
+
+  &__text {
+    @include vp-1024 {
+      // grid-column: span 1 / span 1;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      // margin-bottom: size(15px);
+      @include vp-768 {
+        // margin-bottom: size(30px);
+      }
+    }
+  }
+
+  &__question {
+    @include vp-768 {
+    }
+  }
+
+  &__answer {
+    @include vp-768 {
+    }
+
+    @include vp-1024 {
+    }
+  }
+}

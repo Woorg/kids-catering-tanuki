@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+  //padding-top: size(80px);
+  //padding-bottom: size(80px);
+  padding-right: size(16px);
+  padding-left: size(16px);
+
+  @include vp-320 {
+    padding-right: size(15px);
+    padding-left: size(15px);
+  }
+
+  @include vp-375 {
+    padding-right: size(30px);
+    padding-left: size(30px);
+  }
+
+  @include vp-1024 {
+    //padding-top: size(100px);
+    padding-right: size(30px);
+    //padding-bottom: size(100px);
+    padding-left: size(30px);
+  }
+
+  @include vp-1280 {
+    max-width: $vp-1280;
+  }
+
+  @include vp-1920 {
+    max-width: 100%;
+  }
+}
