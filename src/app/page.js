@@ -5,22 +5,26 @@ import Faq from "./components/faq/Faq";
 import Game from "./components/game/Game";
 import Hero from "./components/hero/Hero";
 import KidsBox from "./components/kids-box/KidsBox";
-import Party from "./components/party/Party";
+import PartyTanuki from "./components/party/PartyTanuki";
+import PartyCaspian from "./components/party/PartyCaspian";
+import PartyHorn from "./components/party/PartyHorn";
 import Testimonials from "./components/testimonials/Testimonials";
 import ToyChips from "./components/toyChips/ToyChips";
 // import Image from "next/image";
 
 export default async function Home() {
   return (
-    <>
+    <div className="page__w m-auto w-full max-w-screen-2xl">
       <Hero />
       <Testimonials />
-      <Party />
+      <PartyTanuki />
+      <PartyCaspian />
+      <PartyHorn />
       <KidsBox />
       <Game />
       <ToyChips />
       <Atmosphere />
       <Faq className={clsx("")} />
-    </>
+    </div>
   );
 }

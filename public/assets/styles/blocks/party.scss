@@ -1,0 +1,41 @@
+.party {
+  border-radius: 158px;
+  // overflow: hidden;
+  &__container {
+    position: relative;
+  }
+  &__title {
+  }
+  &__entry {
+  }
+  &__slider {
+  }
+
+  &__slider-slide {
+    background: transparent;
+    border-radius: 144px;
+    overflow: hidden;
+    &:nth-child(1n) {
+    }
+  }
+
+  &__slider-item {
+  }
+  &__slider-image {
+    background: transparent;
+  }
+  &__text {
+  }
+
+  &__big-image {
+  }
+}
+
+.party_kids-box {
+  .party__slider-slide {
+    border-radius: 0;
+  }
+}
+
+.party_game {
+}

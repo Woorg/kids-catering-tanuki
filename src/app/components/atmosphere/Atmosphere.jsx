@@ -18,20 +18,18 @@ const Atmosphere = async ({ className, images }) => {
         {data.title}
       </h2>
 
-      <div className="atmosphere__images">
-        <figure className={clsx("atmosphere__image")}>
-          <Image
-            className=""
-            src={atmoImage.src}
-            alt="image"
-            style={{ maxWidth: "100%", objectFit: "cover" }}
-            width={atmoImage.width}
-            height={atmoImage.height}
-            blurDataURL={atmoImage.blurDataURL}
-            placeholder="blur"
-          />
-        </figure>
-      </div>
+      <figure className={clsx("atmosphere__image flex justify-center")}>
+        <Image
+          className=""
+          src={atmoImage.src}
+          alt="image"
+          style={{ maxWidth: "100%", objectFit: "cover" }}
+          width={atmoImage.width}
+          height={atmoImage.height}
+          blurDataURL={atmoImage.blurDataURL}
+          placeholder="blur"
+        />
+      </figure>
     </section>
   );
 };

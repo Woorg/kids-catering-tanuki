@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Container from "../container/Container";
 import Link from "next/link";
+import Button from "@components/ui/button/Button";
 
 const Faq = () => {
   const data = [
@@ -66,12 +67,12 @@ const Faq = () => {
           ))}
         </div>
 
-        <Link
+        <Button
           className="faq__button mt-20  lg:px-14 lg:py-7 bg-black rounded-full justify-center items-center inline-flex text-center text-white lg:text-2xl font-bold tracking-tight "
           href="/button"
         >
           Заказать праздник
-        </Link>
+        </Button>
       </Container>
     </section>
   );

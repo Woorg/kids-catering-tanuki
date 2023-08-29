@@ -20,9 +20,16 @@ module.exports = {
         padding: "2rem",
       },
       colors: {
+        orange: "#F90",
+        horn: "#A1D9F7",
+        blue: "#039",
+        sky: "#E1F3FF",
         red: "#FB2E13",
         gray: "rgba(0,0,0,.4)",
         "dark-gray": "rgba(0,0,0,.8)",
+      },
+      fontSize: {
+        "text-6xl": "4.125rem",
       },
       fontFamily: {
         montserrat: ["var(--montserrat)"],
