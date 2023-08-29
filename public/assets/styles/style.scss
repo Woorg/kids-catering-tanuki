@@ -15,6 +15,7 @@
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
+@import "global/fonts";
 @import "global/container";
 // @import "vendor/swiper";
 
@@ -23,11 +24,14 @@
 
 // @import "blocks/header";
 // @import "blocks/logo";
-// @import "blocks/nav";
+@import "blocks/nav";
 // @import "blocks/prism";
 @import "blocks/hero";
 @import "blocks/testimonials";
 @import "blocks/party";
+@import "blocks/kids-box";
+@import "blocks/game";
+@import "blocks/toy-chips";
 // @import "blocks/banner";
 // @import "blocks/ticker";
 // @import "blocks/services";

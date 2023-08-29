@@ -23,34 +23,25 @@ const Footer = () => {
   return (
     <footer className={clsx("footer")}>
       <Container
-        className={clsx(
-          "footer__container py-6 font-pt-root-ui grid grid-cols-12"
-        )}
+        className={clsx("footer__container py-6 font-pt-root-ui font-medium ")}
       >
-        <div className={clsx("footer__side col-span-7")}>
-          <Nav className={clsx("footer__nav")} />
+        <Nav className={clsx("footer__nav mb-5 lg:mb-0")} />
 
-          {data.phone && (
-            <a
-              href={`tel:${data.phone.tel}`}
-              className={clsx(
-                "footer__phone phone mb-2 inline-flex text-black text-opacity-40 text-sm font-medium leading-none"
-              )}
-            >
-              {data.phone.text}
-            </a>
+        <a
+          href={`tel:${data.phone.tel}`}
+          className={clsx(
+            "footer__phone phone mb-2 inline-flex text-gray text-lg lg:text-sm lg:text-gray"
           )}
-          <p className="footer__copyright text-black text-opacity-40 text-sm font-medium leading-none">
-            {data.copyright}
-          </p>
-        </div>
+        >
+          {data.phone.text}
+        </a>
 
-        <div className={clsx("footer__media col-span-5 grid grid-cols-12")}>
-          <Stores className={clsx("footer__stores col-span-7")} />
-          <Socials
-            className={clsx("footer__socials col-span-5 footer__social")}
-          />
-        </div>
+        <Stores className={clsx("footer__stores mb-5 lg:mb-0")} />
+        <Socials className={clsx("footer__socials")} />
+
+        <p className="footer__copyright mt-8 lg:mt-0  text-black text-opacity-40 text-sm font-medium leading-4 ">
+          {data.copyright}
+        </p>
       </Container>
     </footer>
   );

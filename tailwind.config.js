@@ -7,6 +7,13 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    truncate: {
+      lines: {
+        3: "3",
+        5: "5",
+        8: "8",
+      },
+    },
     extend: {
       screens: {
         sm: "540px",
@@ -29,7 +36,8 @@ module.exports = {
         "dark-gray": "rgba(0,0,0,.8)",
       },
       fontSize: {
-        "text-6xl": "4.125rem",
+        "4.5xl": "2.875rem",
+        "6xl": "4.125rem",
       },
       fontFamily: {
         montserrat: ["var(--montserrat)"],
@@ -52,5 +60,5 @@ module.exports = {
       // },
     },
   },
-  plugins: [],
+  plugins: ["tailwindcss-truncate-multiline"],
 };

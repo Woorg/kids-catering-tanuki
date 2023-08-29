@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 
 const KidsBox = () => {
   const data = {
-    title: "Вступайте в игру!",
+    title: "Обновленный Kids Box",
     badge: "Новый состав",
 
     slider: [
@@ -36,20 +36,20 @@ const KidsBox = () => {
     ],
   };
   return (
-    <section className="party party_kids-box bg-red mb-3">
-      <Container className="party__container container flex flex-col items-center py-10">
-        <h2 className="party__title m-auto mb-3 text-center max-w-3xl text-6xl font-seymour text-white">
+    <section className="kids-box rounded-default bg-red mb-3">
+      <Container className="kids-box__container container flex flex-col items-center py-10">
+        <h2 className="kids-box__title title font-seymour max-w-3xl m-auto mb-3 text-6xl text-center text-white">
           {data.title}
         </h2>
-        <div className="party__text badge">{data.badge}</div>
-        <div className="party__content w-full flex items-center text-left gap-4 ">
-          <div className="party__slider flex-grow w-[553px]">
+        <div className="kids-box__badge badge mb-5">{data.badge}</div>
+        <div className="kids-box__content flex items-center w-full gap-4 text-left">
+          <div className="kids-box__slider flex-grow w-[553px]">
             <Swiper
               modules={[Pagination]}
               grabCursor={true}
               pagination={{
-                el: ".swiper-pagination",
-                type: "bullets",
+                el: ".kids-box__pagination",
+                clickable: true,
               }}
               spaceBetween={0}
               autoHeight={true}
@@ -65,18 +65,18 @@ const KidsBox = () => {
                 },
               }}
             >
-              <button className="party__pagination">
+              <div className="kids-box__pagination z-10 flex items-center justify-center gap-2 mt-10">
                 {/* <SliderButton /> */}
-              </button>
+              </div>
 
               {data.slider.map((slide, key) => {
                 return (
                   <SwiperSlide
                     key={`__${key}__`}
-                    className="party__slider-slide "
+                    className="kids-box__slider-slide"
                   >
-                    <div className="party__slider-item">
-                      <figure className="party__slider-image mb-6">
+                    <div className="kids-box__slider-item px-4">
+                      <figure className="kids-box__slider-image lg:mb-6 mb-4">
                         <Image
                           src={slide.image.src}
                           alt={slide.alt}
@@ -87,8 +87,8 @@ const KidsBox = () => {
                         />
                       </figure>
 
-                      <div className="party__entry min-h-[50px] px-10 max-w-xs">
-                        <div className="party__text text-lg font-semibold leading-6 text-white">
+                      <div className="kids-box__entry min-h-[50px] px-10 max-w-xs">
+                        <div className="kids-box__text lg:text-lg text-base font-semibold leading-6 text-white">
                           {slide.text}
                         </div>
                       </div>

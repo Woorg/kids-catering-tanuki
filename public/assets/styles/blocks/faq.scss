@@ -19,7 +19,7 @@
 
   &__item {
     &:not(:last-child) {
-      // margin-bottom: size(15px);
+      @apply mb-6 lg:mb-11;
       @include vp-768 {
         // margin-bottom: size(30px);
       }

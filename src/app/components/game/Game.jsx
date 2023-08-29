@@ -4,8 +4,16 @@ import ImgOne from "@images/content/game/img-1.webp";
 import ImgTwo from "@images/content/game/img-2.webp";
 import ImgThree from "@images/content/game/img-3.webp";
 import BigImg from "@images/content/game/img-big.webp";
+
+import SliderImgOne from "@images/content/toychips/toy-chip-1.webp";
+import SliderImgTwo from "@images/content/toychips/toy-chip-2.webp";
+import SliderImgThree from "@images/content/toychips/toy-chip-3.webp";
+import SliderImgFourth from "@images/content/toychips/toy-chip-4.webp";
+import SliderImgFive from "@images/content/toychips/toy-chip-5.webp";
+import SliderImgSix from "@images/content/toychips/toy-chip-6.webp";
+
 import Button from "@components/ui/button/Button";
-import PlusIcon from "@components/icons/PlusIcon";
+
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Pagination, A11y } from "swiper/modules";
 
@@ -30,45 +38,27 @@ const Game = () => {
       },
     ],
     badge: "Игра “Вперёд, Тануки”",
-
-    // slider: [
-    //   {
-    //     image: SliderImgOne,
-    //     alt: "slider img 1",
-    //     text: "Kid`s Box с шашлычками из курицы",
-    //   },
-    //   {
-    //     image: SliderImgTwo,
-    //     alt: "slider img 2",
-    //     text: "Kid`s Box с куриными наггетсами",
-    //   },
-    //   {
-    //     image: SliderImgThree,
-    //     alt: "slider img 3",
-    //     text: "Kid`s Box с куриным бургером",
-    //   },
-    // ],
   };
   return (
-    <section className="party party_game bg-orange mb-3">
-      <Container className="party__container container flex flex-col items-center py-10">
-        <h2 className="party__title m-auto mb-9 text-center max-w-3xl text-6xl font-seymour text-white">
+    <section className="game rounded-default bg-orange mb-3">
+      <Container className="game__container lg:py-10 container flex flex-col items-center py-6">
+        <h2 className="game__title title title_smaller lg:mb-9 font-seymour max-w-xl m-auto mb-6 text-5xl text-center text-white">
           {data.title}
         </h2>
         {data.list && (
-          <ul className="party__list w-full max-w-4xl">
+          <ul className="game__list lg:max-w-4xl w-full max-w-sm">
             {data.list.map((item, key) => (
               <li
                 key={`__${key}__`}
-                className="party__item mb-3 flex items-center text-left gap-16 h-[142px] shrink-0 items-center pl-5 bg-white rounded-[53px]"
+                className="game__item relative last:mb-0  lg:mb-3 lg:gap-10 shrink-0  flex items-center gap-0  mb-1 h-[90px] lg:h-[132px] text-left"
               >
-                <span className="party__item-num w-12 flex justify-center text-4xl  font-bold">
+                <span className="game__item-num lg:w-28 lg:text-4xl w-14 flex justify-center flex-shrink-0 text-2xl font-bold text-center">
                   {key + 1}
                 </span>
-                <span className="party__item-text text-xl font-medium leading-6 mr-auto">
+                <span className="game__item-text lg:text-xl lg:leading-6 mr-auto text-sm font-medium leading-5">
                   {item.text}
                 </span>
-                <figure className="party__item-image relative -right-10">
+                <figure className="game__item-image relative">
                   <Image
                     src={item.image.src}
                     alt={item.alt}
@@ -83,12 +73,12 @@ const Game = () => {
           </ul>
         )}
 
-        <div className="party__badge badge badge_white mt-9 mb-10">
+        <div className="game__badge badge badge_white lg:mt-9 mb-9 lg:mb-10 mt-6">
           {data.badge}
         </div>
 
         <Image
-          className="party__big-image -mb-20 maw"
+          className="game__big-image max-w-[292px] lg:max-w-[701px]  lg:-mb-20 -mb-12"
           src={BigImg.src}
           alt={BigImg.alt}
           width={BigImg.width}

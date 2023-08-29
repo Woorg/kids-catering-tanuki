@@ -11,6 +11,10 @@
   }
 }
 
+.rounded-default {
+  @apply rounded-[68px] lg:rounded-[158px];
+}
+
 .noise {
   z-index: 0;
   position: absolute;
@@ -57,19 +61,20 @@
 }
 
 .badge {
-  @apply pt-3.5 text-center text-xl font-bold leading-6 text-white h-[51px] w-[206px];
+  @apply pt-2.5 lg:pt-3.5 text-center text-base lg:text-xl font-bold leading-6 text-white h-[42px] w-[154px] lg:h-[51px] lg:w-[206px];
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='206' height='51' viewBox='0 0 206 51' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M195.781 15.1837C198.92 26.0617 192.646 37.4247 181.768 40.5635C145.739 50.9599 98.4231 54.9439 26.7937 43.6011C15.6112 41.8303 7.98151 31.3296 9.7523 20.1471C11.5231 8.96459 22.0238 1.33489 33.2063 3.10568C100.498 13.7615 141.521 9.50416 170.401 1.17071C181.279 -1.96816 192.642 4.30566 195.781 15.1837Z' fill='black'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .badge_white {
-  @apply pt-4 text-orange h-[56px] w-[300px];
+  @apply pt-2.5 lg:pt-4 text-orange w-[222px] h-[41px]  lg:h-[56px] lg:w-[300px];
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='222' height='41' viewBox='0 0 222 41' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M221.582 14.1323C223.165 23.29 217.026 31.9977 207.868 33.5814C164.264 41.122 105.867 44.2548 15.4103 35.6699C6.15822 34.7918 -0.630258 26.5797 0.247821 17.3276C1.1259 8.0755 9.33802 1.28702 18.5901 2.1651C106.914 10.5475 162.202 7.32378 202.133 0.41831C211.29 -1.1654 219.998 4.97455 221.582 14.1323Z' fill='white'/%3E%3C/svg%3E");
 }
 
 .badge_orange {
+  @apply pt-2.5 lg:pt-[18px] text-white h-[41px] w-[250px] lg:h-[60px] lg:w-[320px];
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='41' viewBox='0 0 250 41' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M249.64 14.4952C251.023 23.6854 244.695 32.2568 235.505 33.6401C185.909 41.1052 119.247 44.2484 15.6147 35.6881C6.35256 34.923 -0.535655 26.7943 0.229426 17.5322C0.99451 8.27011 9.12316 1.3819 18.3853 2.14698C120.161 10.554 184.116 7.34069 230.495 0.359669C239.685 -1.02363 248.257 5.30507 249.64 14.4952Z' fill='%23FF9900'/%3E%3C/svg%3E");
 }
 

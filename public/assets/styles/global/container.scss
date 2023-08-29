@@ -9,19 +9,13 @@
   padding-left: size(16px);
 
   @include vp-320 {
-    padding-right: size(15px);
-    padding-left: size(15px);
   }
 
   @include vp-375 {
-    padding-right: size(30px);
-    padding-left: size(30px);
   }
 
   @include vp-1024 {
-    //padding-top: size(100px);
     padding-right: size(30px);
-    //padding-bottom: size(100px);
     padding-left: size(30px);
   }
 

@@ -1,42 +1,63 @@
 .footer {
   &__container {
-    @include vp-768 {
-    }
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content min-content min-content min-content;
+    gap: 0px 0px;
+    grid-template-areas:
+      "stores"
+      "phone"
+      "nav"
+      "socials"
+      "copyright";
     @include vp-1024 {
+      display: grid;
+      grid-auto-flow: column dense;
+      grid-template-columns: 1fr auto auto;
+      grid-template-rows: min-content min-content;
+      gap: 0px 0px;
+      grid-template-areas:
+        "nav stores socials"
+        "phone . .";
     }
   }
 
   &__nav {
+    grid-area: nav;
     @include vp-1024 {
+      @apply h-6;
+      grid-area: nav;
+      // align-items: start;
     }
   }
 
-  &__social {
+  &__phone {
+    grid-area: phone;
     @include vp-1024 {
+      @apply -mt-10;
+      grid-area: phone;
     }
   }
 
+  &__stores {
+    @include vp-1024 {
+      grid-area: stores;
+    }
+  }
+
+  &__socials {
+    grid-area: socials;
+    @include vp-1024 {
+      @apply pl-10;
+      grid-area: socials;
+    }
+  }
   &__copyright {
+    grid-area: copyright;
     @include vp-1024 {
-    }
-  }
-
-  &__social {
-    @include vp-1024 {
-    }
-  }
-
-  &__made {
-    @include vp-1024 {
-    }
-
-    a {
-    }
-  }
-
-  &__made-item {
-    &:not(:last-child) {
+      @apply relative col-span-6 -top-3;
+      // grid-area: copyright;
+      // align-items: start;
     }
   }
 }

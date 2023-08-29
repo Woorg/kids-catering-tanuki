@@ -1,0 +1,31 @@
+.toy-chips {
+  overflow: hidden;
+  &__container {
+  }
+  &__badge-w {
+  }
+
+  &__badge {
+  }
+
+  &__slider {
+    .swiper-wrapper {
+      @apply flex lg:grid lg:grid-cols-3;
+    }
+  }
+
+  &__item {
+  }
+
+  &__image {
+  }
+
+  &__entry {
+  }
+
+  &__item-title {
+  }
+
+  &__item-text {
+  }
+}

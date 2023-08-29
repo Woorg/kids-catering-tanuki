@@ -1,0 +1,39 @@
+.kids-box {
+  // border-radius: 158px;
+  // overflow: hidden;
+  &__container {
+    position: relative;
+  }
+  &__title {
+  }
+  &__entry {
+  }
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__slider-slide {
+    background: transparent;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__slider-item {
+  }
+  &__slider-image {
+    background: transparent;
+  }
+
+  &__pagination {
+    .swiper-pagination-bullet {
+      opacity: 1;
+      @apply w-[14px] h-[14px] bg-[#D21800];
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15) inset;
+    }
+    .swiper-pagination-bullet-active {
+      @apply bg-white;
+    }
+  }
+  &__text {
+  }
+}

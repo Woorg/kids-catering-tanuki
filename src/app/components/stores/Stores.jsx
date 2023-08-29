@@ -32,7 +32,11 @@ const Stores = ({ className }) => {
       <ul className={clsx("stores__list flex gap-2 flex-wrap")}>
         {data.stores.markets.map((store, key) => (
           <li key={`__${key}__`} className={clsx("stores__item")}>
-            <Link key={`__${key}__`} href={store.link} className="stores__link">
+            <Link
+              key={`__${key}__`}
+              href={store.link}
+              className="stores__link text-black  hover:text-dark-gray transition-colors"
+            >
               {store.icon}
             </Link>
           </li>

@@ -71,7 +71,7 @@ const Testimonials = () => {
                         {slide.text}
                       </div>
                     </div>
-                    <div className="testimonials__author flex items-center gap-2">
+                    <div className="testimonials__author pl-5 flex items-center gap-2">
                       <div className="testimonials__image">
                         <Image
                           src={slide.image.src}
