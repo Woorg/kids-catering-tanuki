@@ -33,20 +33,21 @@ const PartyTanuki = () => {
       },
     ],
   };
+
   return (
-    <section className="party bg-[#f5f3f2] mb-3">
-      <Container className="party__container container flex flex-col items-center py-10">
-        <h2 className="party__title m-auto mb-3 text-center max-w-3xl text-6xl font-seymour text-[#fb2e13]">
+    <section className="party rounded-default bg-[#f5f3f2] mb-2 lg:mb-3">
+      <Container className="party__container lg:py-10 container flex flex-col items-center py-6">
+        <h2 className="party__title title text-red max-w-3xl m-auto mb-3 text-6xl text-center">
           {data.title}
         </h2>
-        <div className="party__content w-full flex items-center text-left gap-4 ">
-          <div className="party__slider flex-grow w-[553px]">
+        <div className="party__content lg:flex-row flex flex-col-reverse items-center w-full gap-4 text-left">
+          <div className="party__slider flex-grow w-full lg:w-[553px]">
             <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]}>
               {data.slider.map((slide, key) => {
                 return (
                   <SwiperSlide
                     key={`__${key}__`}
-                    className="party__slider-slide bg-transparent"
+                    className="party__slider-slide rounded-[99px]"
                   >
                     <div className="party__slider-item ">
                       <figure className="party__slider-image ">
@@ -66,19 +67,19 @@ const PartyTanuki = () => {
             </Swiper>
           </div>
 
-          <div className="party__entry pl-16">
-            <div className="party__text text-lg  font-medium leading-[30px]">
+          <div className="party__entry lg:pl-16">
+            <div className="party__text text-sm lg:text-lg font-medium leading-6 lg:leading-[30px]">
               {data.text}
             </div>
           </div>
         </div>
         <Button
-          className="faq__button mt-20  lg:px-14 lg:py-7 bg-red rounded-full justify-center items-center inline-flex text-center text-white lg:text-2xl font-bold tracking-tight "
+          className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl bg-red inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white rounded-full"
           href="/button"
         >
           Заказать праздник
         </Button>
-        <figure className="party__bear w-[366px] h-[374px] absolute left-0 z-10 bottom-0">
+        <figure className="party__bear w-[140px] h-[140px] lg:w-[366px] lg:h-[374px] absolute left-0 z-10 bottom-28 lg:bottom-0">
           <Image
             src={Bear.src}
             alt="Bear"

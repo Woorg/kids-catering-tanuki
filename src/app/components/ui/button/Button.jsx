@@ -3,9 +3,10 @@
 import clsx from "clsx";
 import Link from "next/link";
 
-const Button = ({ children, href, className }) => {
+const Button = ({ label, children, href, className }) => {
   return (
     <Link
+      aria-label={label}
       href={href}
       className={clsx(className, "transition-all hover:opacity-90")}
     >

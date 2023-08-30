@@ -35,19 +35,19 @@ const PartyTanuki = () => {
     ],
   };
   return (
-    <section className="party bg-sky mb-3">
-      <Container className="party__container container flex flex-col items-center py-10">
-        <h2 className="party__title m-auto mb-3 text-center max-w-3xl text-6xl font-seymour text-blue">
+    <section className="party rounded-default bg-sky lg:mb-3 mb-2">
+      <Container className="party__container lg:py-10 container flex flex-col items-center py-6">
+        <h2 className="party__title title font-seymour text-blue max-w-3xl m-auto mb-3 text-6xl text-center">
           {data.title}
         </h2>
-        <div className="party__content w-full flex flex-row-reverse items-center text-left gap-4 ">
-          <div className="party__slider flex-grow w-[553px]">
+        <div className="party__content lg:flex-row-reverse flex flex-col-reverse items-center w-full gap-4 text-left">
+          <div className="party__slider flex-grow w-full lg:w-[553px]">
             <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]}>
               {data.slider.map((slide, key) => {
                 return (
                   <SwiperSlide
                     key={`__${key}__`}
-                    className="party__slider-slide bg-transparent"
+                    className="party__slider-slide rounded-[99px]"
                   >
                     <div className="party__slider-item ">
                       <figure className="party__slider-image ">
@@ -67,20 +67,20 @@ const PartyTanuki = () => {
             </Swiper>
           </div>
 
-          <div className="party__entry pr-16">
-            <div className="party__text text-lg text-blue  font-medium leading-[30px]">
+          <div className="party__entry lg:pr-16">
+            <div className="party__text text-sm lg:text-lg text-blue font-medium leading-6 leading-[30px]">
               {data.text}
             </div>
           </div>
         </div>
         <Button
-          className="faq__button mt-20  lg:px-14 lg:py-7 bg-blue rounded-full justify-center items-center inline-flex text-center text-white lg:text-2xl font-bold tracking-tight "
+          className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl bg-blue inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white rounded-full"
           href="/button"
         >
           Заказать праздник
         </Button>
-        <CaspianIconOne className="absolute w-[214px] h-[260px] left-[252px] z-10 bottom-10" />
-        <CaspianIconTwo className="absolute w-[199px] h-[144px] right-0 z-10 bottom-14" />
+        <CaspianIconOne className="absolute w-[214px] h-[260px] left-[230px] z-10 bottom-10 hidden lg:block" />
+        <CaspianIconTwo className="absolute w-[99px] h-[71px] lg:w-[199px] lg:h-[144px] left-0 lg:left-auto lg:right-14 z-10 bottom-28 lg:bottom-28" />
       </Container>
     </section>
   );

@@ -9,10 +9,12 @@ const Stores = ({ className }) => {
       title: "Заказывайте с телефона",
       markets: [
         {
+          label: "App store",
           link: "https://www.apple.com/uk/app-store/",
           icon: <AppStoreIcon />,
         },
         {
+          label: "Google play",
           link: "https://play.google.com/store/games",
           icon: <GooglePlayIcon />,
         },
@@ -34,8 +36,9 @@ const Stores = ({ className }) => {
           <li key={`__${key}__`} className={clsx("stores__item")}>
             <Link
               key={`__${key}__`}
+              aria-label={store.label}
               href={store.link}
-              className="stores__link text-black  hover:text-dark-gray transition-colors"
+              className="stores__link hover:text-dark-gray text-black transition-colors"
             >
               {store.icon}
             </Link>

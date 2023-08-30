@@ -27,20 +27,23 @@ const Game = () => {
       {
         text: "Получайте стикер за каждый купленный Kids Box",
         image: ImgOne,
+        alt: "Image 1",
       },
       {
         text: "Соберите все 6 стикеров в стикерпак",
         image: ImgTwo,
+        alt: "Image 2",
       },
       {
         text: "Получите игру в подарок",
         image: ImgThree,
+        alt: "Image 3",
       },
     ],
     badge: "Игра “Вперёд, Тануки”",
   };
   return (
-    <section className="game rounded-default bg-orange mb-3">
+    <section className="game rounded-default bg-orange lg:mb-3 mb-2">
       <Container className="game__container lg:py-10 container flex flex-col items-center py-6">
         <h2 className="game__title title title_smaller lg:mb-9 font-seymour max-w-xl m-auto mb-6 text-5xl text-center text-white">
           {data.title}
@@ -80,7 +83,7 @@ const Game = () => {
         <Image
           className="game__big-image max-w-[292px] lg:max-w-[701px]  lg:-mb-20 -mb-12"
           src={BigImg.src}
-          alt={BigImg.alt}
+          alt="Big image"
           width={BigImg.width}
           height={BigImg.height}
           blurDataURL={BigImg.blurDataURL}

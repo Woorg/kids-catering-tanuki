@@ -72,6 +72,7 @@ const Faq = () => {
         <Button
           className="faq__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
           href="/button"
+          label="Заказать праздник"
         >
           Заказать праздник
         </Button>

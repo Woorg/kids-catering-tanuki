@@ -1,6 +1,6 @@
 .party {
-  border-radius: 158px;
-  overflow: hidden;
+  @apply overflow-hidden lg:overflow-auto;
+
   &__container {
     position: relative;
   }
@@ -9,11 +9,15 @@
   &__entry {
   }
   &__slider {
+    .swiper-3d {
+      .swiper-slide-shadow {
+        display: none;
+      }
+    }
   }
 
   &__slider-slide {
     background: transparent;
-    border-radius: 144px;
     overflow: hidden;
     transition: all 0.3s ease;
     &:nth-child(1n) {
@@ -35,7 +39,6 @@
   &__slider-item {
   }
   &__slider-image {
-    background: transparent;
   }
   &__text {
   }

@@ -36,7 +36,7 @@ const KidsBox = () => {
     ],
   };
   return (
-    <section className="kids-box rounded-default bg-red mb-3">
+    <section className="kids-box rounded-default bg-red lg:mb-3 mb-2">
       <Container className="kids-box__container container flex flex-col items-center py-10">
         <h2 className="kids-box__title title font-seymour max-w-3xl m-auto mb-3 text-6xl text-center text-white">
           {data.title}

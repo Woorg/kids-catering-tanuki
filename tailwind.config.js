@@ -7,13 +7,6 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    truncate: {
-      lines: {
-        3: "3",
-        5: "5",
-        8: "8",
-      },
-    },
     extend: {
       screens: {
         sm: "540px",
@@ -32,8 +25,9 @@ module.exports = {
         blue: "#039",
         sky: "#E1F3FF",
         red: "#FB2E13",
-        gray: "rgba(0,0,0,.4)",
-        "dark-gray": "rgba(0,0,0,.8)",
+        gray: "#999",
+        "light-gray": "#F5F3F2",
+        "dark-gray": "#1f1f1f",
       },
       fontSize: {
         "4.5xl": "2.875rem",
@@ -43,6 +37,12 @@ module.exports = {
         montserrat: ["var(--montserrat)"],
         seymour: ["var(--seymour)"],
         "pt-root-ui": ["var(--pt-root-ui)"],
+      },
+      lineClamp: {
+        7: "7",
+        8: "8",
+        9: "9",
+        10: "10",
       },
       // keyframes: {
       //   "accordion-down": {
@@ -60,5 +60,8 @@ module.exports = {
       // },
     },
   },
-  plugins: ["tailwindcss-truncate-multiline"],
+  plugins: ["@tailwindcss/line-clamp"],
+  variants: {
+    lineClamp: ["responsive", "hover"],
+  },
 };

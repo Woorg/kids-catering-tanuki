@@ -12,10 +12,16 @@ import Testimonials from "./components/testimonials/Testimonials";
 import ToyChips from "./components/toyChips/ToyChips";
 // import Image from "next/image";
 
+// export const metadata = {
+//   title: "Детские праздникис «Tануки» Home",
+//   description:
+//     "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось.",
+// };
+
 export default async function Home() {
   return (
     <div className="page__w max-w-screen-2xl w-full m-auto">
-      <Hero />
+      {/* <Hero /> */}
       <Testimonials />
       <PartyTanuki />
       <PartyCaspian />

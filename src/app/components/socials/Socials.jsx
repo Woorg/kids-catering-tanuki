@@ -9,10 +9,12 @@ const Socials = ({ className }) => {
       title: "Присоединяйтесь к нам",
       links: [
         {
+          label: "Vk",
           link: "https://vk.com",
           icon: <VkIcon />,
         },
         {
+          label: "Telegram",
           link: "https://t.me/some",
           icon: <TelegramIcon />,
         },
@@ -33,6 +35,7 @@ const Socials = ({ className }) => {
           <li key={`__${key}__`} className={clsx("social__item")}>
             <Link
               key={`__${key}__`}
+              aria-label={social.label}
               href={social.link}
               className={clsx("social__link")}
             >
