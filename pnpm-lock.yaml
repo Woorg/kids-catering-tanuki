@@ -41,9 +41,6 @@ dependencies:
   tailwindcss-fluid-type:
     specifier: ^2.0.3
     version: 2.0.3(tailwindcss@3.3.3)
-  tailwindcss-truncate-multiline:
-    specifier: ^1.0.3
-    version: 1.0.3
 
 devDependencies:
   '@trivago/prettier-plugin-sort-imports':
@@ -3201,10 +3198,6 @@ packages:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
       tailwindcss: 3.3.3
-    dev: false
-
-  /tailwindcss-truncate-multiline@1.0.3:
-    resolution: {integrity: sha512-YsF5Nn2lQUCJECbU99dMDJ/XhrG8RKbSYXPmvoHnldB+HG/H8vJUqB+b5HKapvT26aQotdZLjJpC8YBGrWU12A==}
     dev: false
 
   /tailwindcss@3.3.3:
