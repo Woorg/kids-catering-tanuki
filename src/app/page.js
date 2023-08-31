@@ -21,7 +21,7 @@ import ToyChips from "./components/toyChips/ToyChips";
 export default async function Home() {
   return (
     <div className="page__w max-w-screen-2xl w-full m-auto">
-      {/* <Hero /> */}
+      <Hero />
       <Testimonials />
       <PartyTanuki />
       <PartyCaspian />
