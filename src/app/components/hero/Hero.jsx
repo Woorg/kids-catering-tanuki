@@ -69,14 +69,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero bg-red pb-16">
-      <Container className="hero__container container pt-16">
-        <LogoIcon className="hero__logo m-auto mb-8" />
-        <h1 className="hero__title mb-14 font-seymour  text-center text-white text-6xl font-normal">
+    <section className="hero rounded-default bg-red lg:pb-16 pb-6">
+      <Container className="hero__container lg:pt-16 container pt-8">
+        <LogoIcon className="hero__logo m-auto mb-6 lg:mb-8 lg:w-[200px] lg:h-[21px] w-[162px] h-[17px]" />
+        <h1 className="hero__title title mb-14 font-seymour text-6xl font-normal text-center text-white">
           {data.title}
         </h1>
         {data.bears && (
-          <div className="hero__bears flex justify-center w">
+          <div className="hero__bears w flex justify-center">
             {data.bears.map((bear, key) => {
               return (
                 <figure key={`__${key}__`} className="hero__bear">
@@ -115,7 +115,7 @@ const Hero = () => {
           {data.slider.map((slide, key) => {
             return (
               <SwiperSlide key={`__${key}__`}>
-                <div className="hero__slider-item p-4 w-full flex items-center gap-4">
+                <div className="hero__slider-item flex items-center w-full gap-4 p-4">
                   <figure className="hero__slider-image flex-grow w-[480px]">
                     <Image
                       src={slide.image.src}
@@ -128,11 +128,11 @@ const Hero = () => {
                   </figure>
 
                   <div className="hero__slider-entry flex-shrink w-[380px]">
-                    <h3 className="hero__slider-title  pr-5 text-2xl font-bold mb-6 text-white">
+                    <h3 className="hero__slider-title pr-5 mb-6 text-2xl font-bold text-white">
                       {slide.title}
                     </h3>
 
-                    <div className="hero__slider-text  text-md font-medium text-white">
+                    <div className="hero__slider-text text-md font-medium text-white">
                       {slide.text}
                     </div>
                   </div>

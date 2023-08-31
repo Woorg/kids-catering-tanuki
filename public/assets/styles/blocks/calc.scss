@@ -1,0 +1,64 @@
+.calc {
+    &__title {
+
+    }
+    &__form {
+
+    }
+    &__date {
+
+    }
+
+    &__types {
+
+    }
+
+    &__types-title {
+
+    }
+
+    &__types-w {
+
+    }
+
+    &__type {
+        position: relative;
+        color: transparent;
+    }
+
+    &__type_anim {
+
+    }
+
+    &__type_create {
+
+    }
+
+    &__type_cook {
+
+    }
+
+    &__type_show {
+
+    }
+
+    &__type-title {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__radio {
+
+    }
+
+    &__type-bg {
+        // z-index: -1;
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+}

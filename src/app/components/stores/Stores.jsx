@@ -24,13 +24,13 @@ const Stores = ({ className }) => {
 
   return (
     <div className={clsx(className, "stores")}>
-      <h4
+      <div
         className={clsx(
           "stores__title mb-3 text-black text-opacity-40 text-sm font-medium leading-none"
         )}
       >
         {data.stores.title}
-      </h4>
+      </div>
       <ul className={clsx("stores__list flex gap-2 flex-wrap")}>
         {data.stores.markets.map((store, key) => (
           <li key={`__${key}__`} className={clsx("stores__item")}>

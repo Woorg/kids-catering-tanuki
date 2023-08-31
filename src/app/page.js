@@ -1,4 +1,4 @@
-import clsx from "clsx";
+// import clsx from "clsx";
 
 import Atmosphere from "./components/atmosphere/Atmosphere";
 import Faq from "./components/faq/Faq";

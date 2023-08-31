@@ -23,13 +23,13 @@ const Socials = ({ className }) => {
   };
   return (
     <div className={clsx(className, "social ")}>
-      <h4
+      <div
         className={clsx(
           "social__title mb-3 text-black text-opacity-40 text-sm font-medium leading-none"
         )}
       >
         {data.socials.title}
-      </h4>
+      </div>
       <ul className={clsx("social__list flex gap-3 flex-wrap")}>
         {data.socials.links.map((social, key) => (
           <li key={`__${key}__`} className={clsx("social__item")}>
