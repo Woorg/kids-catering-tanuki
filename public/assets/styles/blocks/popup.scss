@@ -1,0 +1,26 @@
+.popup {
+  &__bg {
+  }
+  &__container {
+    @apply m-auto w-[343px] h-[491px] lg:w-[794px] lg:h-[664px]  pt-12 lg:pt-[60px] pb-14 lg:pb-[63px] px-5 lg:px-24 bg-transparent;
+    // box-shadow: 0px 2px 42.06px 0px rgba(0, 0, 0, 0.25) inset;
+
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 343 475' fill='none'%3E%3Cg filter='url(%23filter0_i_1_2871)'%3E%3Cpath d='M0 174.601C0 94.2981 0 54.1465 23.2125 28.4485C26.2955 25.0354 29.6355 21.8637 33.2032 18.9612C60.0662 -2.89268 100.164 -0.818348 180.36 3.33031C253.346 7.106 289.839 8.99385 313.653 30.7163C316.834 33.6182 319.803 36.7446 322.537 40.0716C343 64.9756 343 101.518 343 174.601V298.993C343 370.127 343 405.694 323.292 430.341C320.655 433.639 317.789 436.747 314.716 439.643C291.746 461.283 256.296 464.165 185.396 469.929C103.191 476.611 62.0886 479.953 34.3348 458.107C30.6552 455.211 27.2072 452.032 24.0223 448.599C0 422.707 0 381.469 0 298.993V174.601Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_1_2871' x='0' y='0.673828' width='343' height='476.288' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='21.03'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_1_2871'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    @include vp-1024 {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='794' height='647' viewBox='0 0 794 647' fill='none'%3E%3Cg filter='url(%23filter0_i_1_59)'%3E%3Cpath d='M0 302.203C0 156.827 0 84.1381 45.5483 39.9456C91.0965 -4.24693 163.752 -2.05117 309.062 2.34033L503.063 8.2033C640.562 12.3588 709.312 14.4365 751.656 58.0794C794 101.722 794 170.504 794 308.066V333.201C794 468.603 794 536.304 752.553 579.766C711.105 623.229 643.481 626.44 508.231 632.864L314.231 642.077C166.718 649.082 92.9606 652.585 46.4803 608.26C0 563.935 0 490.095 0 342.415V302.203Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_1_59' x='0' y='0.132812' width='794' height='650.06' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='3.91758'/%3E%3CfeGaussianBlur stdDeviation='46.0316'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_1_59'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    }
+  }
+  &__title {
+  }
+  &__form {
+  }
+  &__field {
+    @apply mb-2 lg:mb-4;
+  }
+
+  &__close {
+  }
+}

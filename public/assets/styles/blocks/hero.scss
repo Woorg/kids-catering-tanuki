@@ -48,6 +48,7 @@
     @apply px-1 lg:px-2;
     width: min-content !important;
     @include vp-1024 {
+      width: fit-content !important;
     }
   }
 
@@ -78,7 +79,7 @@
   }
 
   &__slider-image {
-    @apply w-auto w-[270px] h-[169px] overflow-hidden;
+    @apply w-auto w-[270px] h-[169px] overflow-hidden lg:h-full;
     object-fit: cover;
     overflow: hidden;
     img {
@@ -111,7 +112,7 @@
     height: 64px;
     @include vp-1024 {
       top: 50%;
-      right: auto;
+      right: 0;
       left: 0;
     }
   }
@@ -124,7 +125,7 @@
     transform: none;
     @include vp-1024 {
       top: 50%;
-      transform: translateY(-50px);
+      transform: translateY(-50px) rotate(0);
     }
     &.swiper-button-disabled {
       opacity: 0.8;
@@ -132,14 +133,18 @@
   }
   &__slider-prev {
     // left: 150px;
+    @include vp-1024 {
+      transform: translateY(-50px) rotate(0deg);
+      left: 0;
+    }
   }
 
   &__slider-next {
     right: 0;
     transform: rotate(180deg);
-    @include vp-1280 {
+    @include vp-1024 {
       transform: translateY(-50px) rotate(180deg);
-      right: -50px;
+      right: 0;
     }
   }
 }

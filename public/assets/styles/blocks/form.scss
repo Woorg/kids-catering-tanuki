@@ -4,6 +4,7 @@
 
   &__field {
     position: relative;
+    @apply w-full;
   }
 
   &__field_datepicker {
@@ -24,5 +25,14 @@
 
   &__radio {
     pointer-events: all;
+  }
+
+  &__input {
+    @apply px-6 w-full h-[70px] lg:h-[90px] text-lg text-black font-medium rounded-[26px] placeholder:text-[#B2ABAA];
+    border: 1.605px solid rgba(0, 0, 0, 0.11);
+  }
+
+  &__submit {
+    // @apply ;
   }
 }

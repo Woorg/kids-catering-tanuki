@@ -122,11 +122,11 @@ const Hero = () => {
                 //   slidesPerView: 2.4,
                 // },
                 1024: {
-                  slidesPerView: 1.2,
+                  slidesPerView: 1.3,
                 },
-                // 1280: {
-                //   slidesPerView: 3,
-                // },
+                1280: {
+                  slidesPerView: 1.6,
+                },
               }}
               navigation={{
                 prevEl: ".hero__slider-prev",
@@ -146,7 +146,7 @@ const Hero = () => {
                 return (
                   <SwiperSlide
                     key={`__${key}__`}
-                    className="hero__slider-slide p-2 lg:p-4"
+                    className="hero__slider-slide p-2 lg:p-2"
                   >
                     <div
                       className="
@@ -161,7 +161,7 @@ const Hero = () => {
                     lg:h-[548px] 
                     flex 
                     flex-col 
-                    lg:flew-row 
+                    lg:flex-row 
                     items-center 
                     w-full 
                 lg:gap-4

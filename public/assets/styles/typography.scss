@@ -5,3 +5,7 @@
 .title_smaller {
   @apply text-[28px] lg:text-4.5xl;
 }
+
+.title_general {
+  @apply text-[28px] lg:text-[56px];
+}

@@ -32,7 +32,7 @@ const Nav = ({ className }) => {
               <Link
                 href={link.link}
                 className={clsx(
-                  "nav__link text-gray lg:text-dark-gray text-sm font-medium leading-none"
+                  "nav__link line-clamp-1 text-gray lg:text-dark-gray text-sm font-medium leading-none"
                 )}
               >
                 {link.text}

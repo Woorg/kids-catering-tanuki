@@ -33,6 +33,7 @@
 
   &__phone {
     grid-area: phone;
+
     @include vp-1024 {
       @apply -mt-10;
       grid-area: phone;

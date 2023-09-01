@@ -73,9 +73,9 @@ const KidsBox = () => {
                 return (
                   <SwiperSlide
                     key={`__${key}__`}
-                    className="kids-box__slider-slide"
+                    className="kids-box__slider-slide "
                   >
-                    <div className="kids-box__slider-item px-4">
+                    <div className="kids-box__slider-item flex flex-col items-center px-4">
                       <figure className="kids-box__slider-image lg:mb-6 mb-4">
                         <Image
                           src={slide.image.src}

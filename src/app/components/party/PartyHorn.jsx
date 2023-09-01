@@ -9,9 +9,10 @@ import Button from "@components/ui/button/Button";
 import HornIcon from "@components/icons/HornIcon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/effect-cards";
+import { useState } from "react";
+import Popup from "@components/popup/Popup";
 
 const PartyHorn = () => {
   const data = {
@@ -33,56 +34,66 @@ const PartyHorn = () => {
       },
     ],
   };
-  return (
-    <section className="party rounded-default bg-horn lg:mb-3 mb-2">
-      <Container className="party__container lg:py-10 container flex flex-col items-center py-6">
-        <h2 className="party__title title font-seymour max-w-3xl m-auto mb-3 text-6xl text-center text-black">
-          {data.title}
-        </h2>
-        <div className="party__content lg:flex-row flex flex-col-reverse items-center w-full gap-4 text-left">
-          <div className="party__slider flex-grow w-full lg:w-[553px]">
-            <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]}>
-              {data.slider.map((slide, key) => {
-                return (
-                  <SwiperSlide
-                    key={`__${key}__`}
-                    className="party__slider-slide rounded-default"
-                  >
-                    <div className="party__slider-item">
-                      <figure className="party__slider-image">
-                        <Image
-                          src={slide.image.src}
-                          alt={slide.alt}
-                          width={slide.image.width}
-                          height={slide.image.height}
-                          blurDataURL={slide.image.blurDataURL}
-                          placeholder="blur"
-                        />
-                      </figure>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
 
-          <div className="party__entry lg:pl-16">
-            <div className="party__text text-sm lg:text-lg text-black font-medium leading-6 lg:leading-[30px]">
-              {data.text}
+  const [openPopup, setOpenPopup] = useState(false);
+
+  return (
+    <>
+      <section className="party rounded-default bg-horn lg:mb-3 mb-2">
+        <Container className="party__container lg:py-10 container flex flex-col items-center py-6">
+          <h2 className="party__title title font-seymour max-w-3xl m-auto mb-3 text-6xl text-center text-black">
+            {data.title}
+          </h2>
+          <div className="party__content lg:flex-row flex flex-col-reverse items-center w-full gap-4 text-left">
+            <div className="party__slider flex-grow w-full sm:w-[553px] lg:w-[553px]">
+              <Swiper
+                effect={"cards"}
+                grabCursor={true}
+                modules={[EffectCards]}
+              >
+                {data.slider.map((slide, key) => {
+                  return (
+                    <SwiperSlide
+                      key={`__${key}__`}
+                      className="party__slider-slide rounded-default"
+                    >
+                      <div className="party__slider-item">
+                        <figure className="party__slider-image">
+                          <Image
+                            src={slide.image.src}
+                            alt={slide.alt}
+                            width={slide.image.width}
+                            height={slide.image.height}
+                            blurDataURL={slide.image.blurDataURL}
+                            placeholder="blur"
+                          />
+                        </figure>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+
+            <div className="party__entry lg:pl-16">
+              <div className="party__text text-sm lg:text-lg text-black font-medium leading-6 lg:leading-[30px]">
+                {data.text}
+              </div>
             </div>
           </div>
-        </div>
 
-        <Button
-          className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
-          href="/button"
-          label="Заказать праздник"
-        >
-          Заказать праздник
-        </Button>
-        <HornIcon className="absolute w-[142px] h-[112px] lg:w-[324px] lg:h-[257px] left-0 z-10 bottom-[114px] lg:bottom-10" />
-      </Container>
-    </section>
+          <button
+            className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
+            aria-label="Заказать праздник"
+            onClick={() => setOpenPopup(!openPopup)}
+          >
+            Заказать праздник
+          </button>
+          <HornIcon className="absolute w-[142px] h-[112px] lg:w-[324px] lg:h-[257px] left-0 z-10 bottom-[114px] lg:bottom-10" />
+        </Container>
+      </section>
+      {openPopup && <Popup visible={setOpenPopup} />}
+    </>
   );
 };
 

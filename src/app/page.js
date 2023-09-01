@@ -20,17 +20,19 @@ import ToyChips from "./components/toyChips/ToyChips";
 
 export default async function Home() {
   return (
-    <div className="page__w w-full m-auto">
-      <Hero />
-      <Testimonials />
-      <PartyTanuki />
-      <PartyCaspian />
-      <PartyHorn />
-      <KidsBox />
-      <Game />
-      <ToyChips />
-      <Atmosphere />
-      <Faq />
-    </div>
+    <>
+      <div className="page__w w-full m-auto">
+        <Hero />
+        <Testimonials />
+        <PartyTanuki />
+        <PartyCaspian />
+        <PartyHorn />
+        <KidsBox />
+        <Game />
+        <ToyChips />
+        <Atmosphere />
+        <Faq />
+      </div>
+    </>
   );
 }
