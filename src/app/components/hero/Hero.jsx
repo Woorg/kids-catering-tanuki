@@ -11,6 +11,12 @@ import SliderImgOne from "@images/content/hero/slider/img-1.webp";
 import SliderImgTwo from "@images/content/hero/slider/img-2.webp";
 import SliderImgThree from "@images/content/hero/slider/img-3.webp";
 import SliderImgFourth from "@images/content/hero/slider/img-4.webp";
+
+import SliderImgMobOne from "@images/content/hero/slider/img-mob-1.webp";
+import SliderImgMobTwo from "@images/content/hero/slider/img-mob-2.webp";
+import SliderImgMobThree from "@images/content/hero/slider/img-mob-3.webp";
+import SliderImgMobFourth from "@images/content/hero/slider/img-mob-4.webp";
+
 import SliderButton from "@components/icons/SliderButton";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -43,24 +49,28 @@ const Hero = () => {
     slider: [
       {
         image: SliderImgOne,
+        imageMob: SliderImgMobOne,
         alt: "slider img 1",
         title: "Анимационные программы",
         text: "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось. А ещё она приготовила игры, конкурсы, сюрпризы. Вас ждёт много серебряного блеска и зажигательной музыки, ну и как же без огромного шара с блестками и маленькими шариками! Танцуй вместе со Звездочкой и стань самым счастливым!",
       },
       {
         image: SliderImgTwo,
+        imageMob: SliderImgMobTwo,
         alt: "slider img 2",
         title: "Kулинарный Мастер-класс",
         text: "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось. А ещё она приготовила игры, конкурсы, сюрпризы. Вас ждёт много серебряного блеска и зажигательной музыки, ну и как же без огромного шара с блестками и маленькими шариками! Танцуй вместе со Звездочкой и стань самым счастливым!",
       },
       {
         image: SliderImgThree,
+        imageMob: SliderImgMobThree,
         alt: "slider img 3",
         title: "Tворческий Мастер-класс",
         text: "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось. А ещё она приготовила игры, конкурсы, сюрпризы. Вас ждёт много серебряного блеска и зажигательной музыки, ну и как же без огромного шара с блестками и маленькими шариками! Танцуй вместе со Звездочкой и стань самым счастливым!",
       },
       {
         image: SliderImgFourth,
+        imageMob: SliderImgMobFourth,
         alt: "slider img 4",
         title: "Шоу программа",
         text: "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось. А ещё она приготовила игры, конкурсы, сюрпризы. Вас ждёт много серебряного блеска и зажигательной музыки, ну и как же без огромного шара с блестками и маленькими шариками! Танцуй вместе со Звездочкой и стань самым счастливым!",
@@ -72,76 +82,129 @@ const Hero = () => {
     <section className="hero rounded-default bg-red lg:pb-16 pb-6">
       <Container className="hero__container lg:pt-16 container pt-8">
         <LogoIcon className="hero__logo m-auto mb-6 lg:mb-8 lg:w-[200px] lg:h-[21px] w-[162px] h-[17px]" />
-        <h1 className="hero__title title mb-14 font-seymour text-6xl font-normal text-center text-white">
+        <h1 className="hero__title title mb-4 lg:mb-8  font-seymour text-6xl font-normal text-center text-white">
           {data.title}
         </h1>
-        {data.bears && (
-          <div className="hero__bears w flex justify-center">
-            {data.bears.map((bear, key) => {
-              return (
-                <figure key={`__${key}__`} className="hero__bear">
-                  <Image
-                    src={bear.image.src}
-                    alt={bear.alt}
-                    width={bear.image.width}
-                    height={bear.image.height}
-                    blurDataURL={bear.image.blurDataURL}
-                    placeholder="blur"
-                  />
-                </figure>
-              );
-            })}
-          </div>
-        )}
-      </Container>
-      <div className="hero__slider mt-4">
-        <Swiper
-          modules={[Navigation]}
-          centeredSlides={true}
-          spaceBetween={16}
-          slidesPerView={1.6}
-          navigation={{
-            prevEl: ".hero__slider-prev",
-            nextEl: ".hero__slider-next",
-          }}
-        >
-          <button className="hero__slider-prev">
-            <SliderButton />
-          </button>
-          <button className="hero__slider-next">
-            <SliderButton />
-          </button>
-
-          {data.slider.map((slide, key) => {
-            return (
-              <SwiperSlide key={`__${key}__`}>
-                <div className="hero__slider-item flex items-center w-full gap-4 p-4">
-                  <figure className="hero__slider-image flex-grow w-[480px]">
+        <div className="hero__top mb-7 lg:mb-0 flex flex-col">
+          {data.bears && (
+            <div className="hero__bears -mt-7 lg:mt-0 order-2 lg:order-1 flex relative z-10 justify-center">
+              {data.bears.map((bear, key) => {
+                return (
+                  <figure key={`__${key}__`} className={`hero__bear_${key}`}>
                     <Image
-                      src={slide.image.src}
-                      alt={slide.alt}
-                      width={slide.image.width}
-                      height={slide.image.height}
-                      blurDataURL={slide.image.blurDataURL}
+                      src={bear.image.src}
+                      alt={bear.alt}
+                      width={bear.image.width}
+                      height={bear.image.height}
+                      blurDataURL={bear.image.blurDataURL}
                       placeholder="blur"
                     />
                   </figure>
+                );
+              })}
+            </div>
+          )}
 
-                  <div className="hero__slider-entry flex-shrink w-[380px]">
-                    <h3 className="hero__slider-title pr-5 mb-6 text-2xl font-bold text-white">
-                      {slide.title}
-                    </h3>
+          <div className="hero__slider order-1 lg:order-2 lg:mt-4">
+            <Swiper
+              modules={[Navigation]}
+              // centeredSlides={true}
+              spaceBetween={0}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1.2,
+                },
 
-                    <div className="hero__slider-text text-md font-medium text-white">
-                      {slide.text}
+                // 425: {
+                //   slidesPerView: 1.6,
+                // },
+                // 540: {
+                //   slidesPerView: 2.4,
+                // },
+                1024: {
+                  slidesPerView: 1.2,
+                },
+                // 1280: {
+                //   slidesPerView: 3,
+                // },
+              }}
+              navigation={{
+                prevEl: ".hero__slider-prev",
+                nextEl: ".hero__slider-next",
+              }}
+            >
+              <div className="hero__navigation w-36 lg:w-auto">
+                <button className="hero__slider-prev">
+                  <SliderButton className="w-16 h-16" />
+                </button>
+                <button className="hero__slider-next">
+                  <SliderButton className="w-16 h-16" />
+                </button>
+              </div>
+
+              {data.slider.map((slide, key) => {
+                return (
+                  <SwiperSlide
+                    key={`__${key}__`}
+                    className="hero__slider-slide p-2 lg:p-4"
+                  >
+                    <div
+                      className="
+                    hero__slider-item 
+                    relative 
+                    pt-5 
+                    px-4
+                    min-h-[400px] 
+                    mx-1  
+                    lg:mx-2 
+                    lg:p-4   
+                    lg:h-[548px] 
+                    flex 
+                    flex-col 
+                    lg:flew-row 
+                    items-center 
+                    w-full 
+                lg:gap-4
+                 "
+                    >
+                      <figure className="hero__slider-image mb-2 lg:mb-0 flex-shrink-0 lg:flex-shrink lg:w-[487px]">
+                        <Image
+                          className="hidden lg:block"
+                          src={slide.image.src}
+                          alt={slide.alt}
+                          width={slide.image.width}
+                          height={slide.image.height}
+                          blurDataURL={slide.image.blurDataURL}
+                          placeholder="blur"
+                        />
+                        <Image
+                          className="block lg:hidden"
+                          src={slide.imageMob.src}
+                          alt={slide.alt}
+                          width={slide.imageMob.width}
+                          height={slide.imageMob.height}
+                          blurDataURL={slide.imageMob.blurDataURL}
+                          placeholder="blur"
+                        />
+                      </figure>
+
+                      <div className="hero__slider-entry lg:flex-shrink lg:w-[370px]">
+                        <h3 className="hero__slider-title line-clamp-2 lg:pr-5 mb-2 lg:mb-6 text-base lg:text-2xl font-bold text-white">
+                          {slide.title}
+                        </h3>
+
+                        <div className="hero__slider-text line-clamp-13 lg:line-clamp-12  text-sm lg:text-md font-medium text-white">
+                          {slide.text}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </div>
+      </Container>
 
       <Container>
         <Calc className="hero__calc" />
