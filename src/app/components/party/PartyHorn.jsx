@@ -45,7 +45,7 @@ const PartyHorn = () => {
             {data.title}
           </h2>
           <div className="party__content lg:flex-row flex flex-col-reverse items-center w-full gap-4 text-left">
-            <div className="party__slider flex-grow w-full sm:w-[553px] lg:w-[553px]">
+            <div className="party__slider flex-grow w-full sm:w-[553px] md:w-[553px]">
               <Swiper
                 effect={"cards"}
                 grabCursor={true}

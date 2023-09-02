@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 import DatePickerIcon from "../icons/DatePickerIcon";
 import AnimTypeIcon from "../icons/AnimTypeIcon";
@@ -15,7 +15,6 @@ registerLocale("ru", ru);
 
 import "react-datepicker/dist/react-datepicker.css";
 import Popup from "@components/popup/Popup";
-
 const Calc = ({ className }) => {
   const data = {
     title: "Калькулятор праздника",
@@ -65,34 +64,51 @@ const Calc = ({ className }) => {
   const [selectedType, setSelectedType] = useState("Анимационная программа");
   const [guests, setQuests] = useState(15);
   const [hours, setHours] = useState(4);
+  const [totalPrice, setTotalPrice] = useState(""); // Add a state variable for the total price
 
-  // const customDatepickerInput = ({ value, onClick, onChange }) => (
-  //   <>
-  //     <DatePickerIcon />
-  //     <input
-  //       selected={startDate}
-  //       value={value}
-  //       locale="ru"
-  //       onClick={onClick}
-  //       onChange={onChange}
-  //     />
-  //   </>
-  // );
+  // Create a function to calculate the total price
+  const calculateTotalPrice = () => {
+    // Define your pricing logic based on program type, guests, and hours
+    let basePrice = 400; // You can set a base price here
+
+    if (selectedType === "Анимационная программа") {
+      // Update the base price based on the program type
+      basePrice = 400; // Adjust this according to your pricing
+    } else if (selectedType === "Творческий Мастер-класс") {
+      basePrice = 450;
+    } else if (selectedType === "Kулинарный Мастер-класс") {
+      basePrice = 550;
+    } else if (selectedType === "Шоу программа") {
+      basePrice = 550;
+    }
+
+    // Calculate the total price based on base price, guests, and hours
+    const totalPrice = basePrice * guests * hours;
+
+    setTotalPrice(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")); // Update the total price state
+  };
+
+  useEffect(() => {
+    // Call the calculateTotalPrice function whenever any of the relevant state variables change
+    calculateTotalPrice();
+  }, [selectedType, guests, hours]);
 
   const onChangeGuests = (guests) => {
-    console.log("new Value", guests);
     setQuests(guests);
   };
 
   const onChangeHours = (hours) => {
-    console.log("new Value", hours);
     setHours(hours);
   };
 
   const showData = () => {
-    setOpenPopup(!openPopup);
+    // setOpenPopup(!openPopup);
+
+    console.log("Date:", startDate);
     console.log("Type:", selectedType);
-    console.log("Open popup");
+    console.log("PricePerHour:", totalPrice);
+    console.log("Hours", hours);
+    console.log("Guests", guests);
   };
 
   const onSubmit = (e) => {
@@ -140,7 +156,7 @@ const Calc = ({ className }) => {
             <h3 className="calc__row-title mb-4 text-center text-base lg:text-lg font-bold leading-5 text-white">
               тип программы
             </h3>
-            <div className="calc__types-w grid grid-cols-2 gap-y-4 lg:gap-y-0 lg:flex items-center flex-wrap">
+            <div className="calc__types-w grid grid-cols-2 gap-y-4 lg:gap-y-0 sm:flex md:justify-center items-center flex-wrap">
               {data.form.types.map((type, key) => (
                 <div
                   key={`__${key}__`}
@@ -218,7 +234,7 @@ const Calc = ({ className }) => {
             </h3>
             <div className="calc__price-w leading-none  flex justify-center items-center flex-wrap gap-2">
               <span className="calc__price text-[42px] lg:text-[62px] text-white font-seymour">
-                24 000
+                {totalPrice}
               </span>
               <RubIcon className="calc__rub-icon w-[47px] h-[42px] lg:w-[68px] lg:h-[62px]" />
             </div>

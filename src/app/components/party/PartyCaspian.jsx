@@ -46,7 +46,7 @@ const PartyTanuki = () => {
             {data.title}
           </h2>
           <div className="party__content lg:flex-row-reverse flex flex-col-reverse items-center w-full gap-4 text-left">
-            <div className="party__slider flex-grow w-full lg:w-[553px]">
+            <div className="party__slider flex-grow w-full md:w-[553px]">
               <Swiper
                 effect={"cards"}
                 grabCursor={true}
