@@ -1,7 +1,10 @@
+"use client";
 import clsx from "clsx";
 import Container from "../container/Container";
 import Link from "next/link";
 import Button from "@components/ui/button/Button";
+import Popup from "@components/popup/Popup";
+import { useState } from "react";
 
 const Faq = () => {
   const data = [
@@ -27,57 +30,62 @@ const Faq = () => {
     },
   ];
 
+  const [openPopup, setOpenPopup] = useState(false);
+
   return (
-    <section className={clsx("faq")}>
-      <Container
-        className={clsx(
-          "faq__container flex flex-col items-center pt-8 pb-11 lg:py-20"
-        )}
-      >
-        <div className={clsx("faq__list max-w-sm lg:max-w-3xl ")}>
-          {data.map((item, key) => (
-            <div
-              key={`__${key}__`}
-              className={clsx("faq__item")}
-              itemScope
-              itemProp="mainEntity"
-              itemType="https://schema.org/Question"
-            >
-              <h2
-                className={clsx(
-                  "faq__question text-black text-[22px] lg:text-4xl font-extrabold mb-4 pb"
-                )}
-                itemProp="name"
-              >
-                {item.question}
-              </h2>
+    <>
+      <section className={clsx("faq")}>
+        <Container
+          className={clsx(
+            "faq__container flex flex-col items-center pt-8 pb-11 lg:py-20"
+          )}
+        >
+          <div className={clsx("faq__list max-w-sm lg:max-w-3xl ")}>
+            {data.map((item, key) => (
               <div
+                key={`__${key}__`}
+                className={clsx("faq__item")}
                 itemScope
-                itemProp="acceptedAnswer"
-                itemType="https://schema.org/Answer"
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
               >
-                <div
+                <h2
                   className={clsx(
-                    "faq__answer text-black text-sm lg:text-lg font-medium leading-relaxed"
+                    "faq__question text-black text-[22px] lg:text-4xl font-extrabold mb-4 pb"
                   )}
-                  itemProp="text"
+                  itemProp="name"
                 >
-                  {item.answer}
+                  {item.question}
+                </h2>
+                <div
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
+                  <div
+                    className={clsx(
+                      "faq__answer text-black text-sm lg:text-lg font-medium leading-relaxed"
+                    )}
+                    itemProp="text"
+                  >
+                    {item.answer}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <Button
-          className="faq__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
-          href="/button"
-          label="Заказать праздник"
-        >
-          Заказать праздник
-        </Button>
-      </Container>
-    </section>
+          <button
+            className="faq__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
+            aria-label="Заказать праздник"
+            onClick={() => setOpenPopup(!openPopup)}
+          >
+            Заказать праздник
+          </button>
+        </Container>
+      </section>
+      {openPopup && <Popup visible={setOpenPopup} />}
+    </>
   );
 };
 

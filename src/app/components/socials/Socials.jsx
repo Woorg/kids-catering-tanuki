@@ -22,7 +22,7 @@ const Socials = ({ className }) => {
     },
   };
   return (
-    <div className={clsx(className, "social ")}>
+    <div className={clsx(className, "social text-center lg:text-left")}>
       <div
         className={clsx(
           "social__title mb-3 text-black text-opacity-40 text-sm font-medium leading-none"
@@ -30,7 +30,11 @@ const Socials = ({ className }) => {
       >
         {data.socials.title}
       </div>
-      <ul className={clsx("social__list flex gap-3 flex-wrap")}>
+      <ul
+        className={clsx(
+          "social__list flex gap-3 justify-center lg:justify-start flex-wrap"
+        )}
+      >
         {data.socials.links.map((social, key) => (
           <li key={`__${key}__`} className={clsx("social__item")}>
             <Link

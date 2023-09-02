@@ -69,7 +69,7 @@ const Calc = ({ className }) => {
   // Create a function to calculate the total price
   const calculateTotalPrice = () => {
     // Define your pricing logic based on program type, guests, and hours
-    let basePrice = 400; // You can set a base price here
+    let basePrice = 0; // You can set a base price here
 
     if (selectedType === "Анимационная программа") {
       // Update the base price based on the program type
@@ -77,7 +77,7 @@ const Calc = ({ className }) => {
     } else if (selectedType === "Творческий Мастер-класс") {
       basePrice = 450;
     } else if (selectedType === "Kулинарный Мастер-класс") {
-      basePrice = 550;
+      basePrice = 500;
     } else if (selectedType === "Шоу программа") {
       basePrice = 550;
     }

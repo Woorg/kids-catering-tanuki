@@ -23,14 +23,14 @@ const Footer = () => {
   return (
     <footer className={clsx("footer")}>
       <Container
-        className={clsx("footer__container py-6 font-pt-root-ui font-medium ")}
+        className={clsx("footer__container py-6 font-pt-root-ui font-medium")}
       >
         <Nav className={clsx("footer__nav mb-5 lg:mb-0")} />
 
         <a
           href={`tel:${data.phone.tel}`}
           className={clsx(
-            "footer__phone phone mb-2 inline-flex text-gray text-lg lg:text-sm lg:text-gray"
+            "footer__phone phone mb-2 justify-center lg:justify-start inline-flex text-gray text-lg lg:text-sm lg:text-gray"
           )}
         >
           {data.phone.text}
@@ -39,7 +39,7 @@ const Footer = () => {
         <Stores className={clsx("footer__stores mb-5 lg:mb-0")} />
         <Socials className={clsx("footer__socials")} />
 
-        <p className="footer__copyright mt-8 lg:mt-0  text-black text-opacity-40 text-sm font-medium leading-4 ">
+        <p className="footer__copyright mt-8 lg:mt-0 text-center lg:text-left  text-black text-opacity-40 text-sm font-medium leading-4 ">
           {data.copyright}
         </p>
       </Container>
