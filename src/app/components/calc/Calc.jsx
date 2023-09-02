@@ -102,13 +102,12 @@ const Calc = ({ className }) => {
   };
 
   const showData = () => {
-    // setOpenPopup(!openPopup);
-
-    console.log("Date:", startDate);
-    console.log("Type:", selectedType);
-    console.log("PricePerHour:", totalPrice);
-    console.log("Hours", hours);
-    console.log("Guests", guests);
+    setOpenPopup(!openPopup);
+    // console.log("Date:", startDate);
+    // console.log("Type:", selectedType);
+    // console.log("PricePerHour:", totalPrice);
+    // console.log("Hours", hours);
+    // console.log("Guests", guests);
   };
 
   const onSubmit = (e) => {
