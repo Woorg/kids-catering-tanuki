@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import DatePickerIcon from "../icons/DatePickerIcon";
 import AnimTypeIcon from "../icons/AnimTypeIcon";
@@ -65,7 +65,7 @@ const Calc = ({ className }) => {
   const [totalPrice, setTotalPrice] = useState(""); // Add a state variable for the total price
 
   // Create a function to calculate the total price
-  const calculateTotalPrice = () => {
+  const calculateTotalPrice = useCallback(() => {
     // Define your pricing logic based on program type, guests, and hours
     let basePrice = 0; // You can set a base price here
 
@@ -84,7 +84,7 @@ const Calc = ({ className }) => {
     const totalPrice = basePrice * guests * hours;
 
     setTotalPrice(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")); // Update the total price state
-  };
+  }, [selectedType, guests, hours]);
 
   useEffect(() => {
     // Call the calculateTotalPrice function whenever any of the relevant state variables change
