@@ -25,6 +25,7 @@
     "tailwindcss-fluid-type": "^2.0.3"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/react": "18.2.21",
     "clsx": "^2.0.0",

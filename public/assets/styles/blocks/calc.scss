@@ -7,9 +7,11 @@
   &__row {
   }
 
+  &__row-title {
+    @apply mb-2 lg:mb-3 text-center text-base lg:text-lg font-bold leading-5 text-white;
+  }
+
   &__datepicker {
-    border: 2px solid rgba(0, 0, 0, 0.11);
-    color: black;
   }
 
   &__types {
@@ -19,11 +21,11 @@
   }
 
   &__types-w {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-y-2 lg:gap-y-0  md:justify-center items-center flex-wrap;
   }
 
   &__type {
-    position: relative;
-    color: transparent;
+    @apply relative  text-transparent aspect-calc-mob lg:aspect-calc;
   }
 
   &__type_selected {
@@ -31,6 +33,10 @@
     .calc__type-label {
       @apply text-black;
     }
+  }
+
+  &__type-label {
+    @apply absolute inset-0 flex items-center transition-colors py-6 px-6  lg:py-10 lg:px-10 justify-center  text-center text-sm lg:text-lg text-white font-bold leading-5;
   }
 
   &__type_anim {
@@ -54,20 +60,14 @@
   }
 
   &__type-bg {
-    // z-index: -1;
-    // z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    @apply absolute top-0 left-0 w-full h-full;
     @include vp-1024 {
-      width: 100%;
-      height: 100%;
     }
   }
 
   &__slider {
     position: relative;
-    @apply pr-3 pb-12;
+    @apply lg:mb-20;
     // margin: 20px;
 
     .rc-slider {
@@ -96,6 +96,10 @@
     .rc-slider-handle {
       @apply w-[40px] h-[40px] lg:w-[40px] lg:h-[52px] mt-1  border-none bg-transparent rounded-xl opacity-100;
       // background: white;
+      &:focus-visible {
+        border: none;
+        box-shadow: none;
+      }
       &:before {
         content: none; /* Remove default handle content */
       }
@@ -111,33 +115,23 @@
     }
 
     .rc-slider-mark {
-      // position: absolute;
-      top: 100%;
-      // left: 20px;
-      left: 10px;
-      right: 16px;
-      // right: 20px;
+      @apply top-[calc(100%+8px)] lg:top-[calc(100%+16px)] left-[16px] -right-[16px];
+      position: absolute;
+      width: 100%;
       height: 32px;
-      // width: auto;
-      width: calc(100% - 10px);
       display: flex;
       justify-content: space-between;
       @include vp-1024 {
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 40px;
+        left: 20px;
+        right: 20px;
       }
     }
 
     .rc-slider-mark-text {
-      top: 8px; /* Adjust this value to position the text below the mark */
-      left: 50%;
       width: 32px;
       height: 32px;
-      @apply text-center flex items-center justify-center text-lg lg:text-2xl font-semibold leading-[20px] text-white;
+      @apply static p-0 text-center flex items-center justify-center text-lg lg:text-2xl font-semibold leading-[20px] text-white;
       @include vp-1024 {
-        top: 10px;
         width: 40px;
         height: 40px;
       }
