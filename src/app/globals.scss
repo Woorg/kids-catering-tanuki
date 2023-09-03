@@ -1,3 +1,5 @@
+@import "../../public/assets/styles/style.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,5 +25,3 @@
     background: var(--color-white);
   }
 }
-
-@import "../../public/assets/styles/style.scss";
