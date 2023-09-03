@@ -14,12 +14,6 @@ import SliderImgSix from "@images/content/toychips/toy-chip-6.webp";
 
 import Button from "@components/ui/button/Button";
 
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Pagination, A11y } from "swiper/modules";
-
-// import "swiper/css";
-// import "swiper/css/pagination";
-
 const Game = () => {
   const data = {
     title: "Вступайте в игру!",
@@ -49,28 +43,27 @@ const Game = () => {
           {data.title}
         </h2>
         {data.list && (
-          <ul className="game__list lg:max-w-4xl w-full max-w-sm">
+          <ul className="game__list ">
             {data.list.map((item, key) => (
-              <li
-                key={`__${key}__`}
-                className="game__item relative last:mb-0  lg:mb-3 lg:gap-10 shrink-0  flex items-center gap-0  mb-1 h-[90px] lg:h-[132px] text-left"
-              >
-                <span className="game__item-num lg:w-28 lg:text-4xl w-14 flex justify-center flex-shrink-0 text-2xl font-bold text-center">
-                  {key + 1}
-                </span>
-                <span className="game__item-text lg:text-xl lg:leading-6 mr-auto text-sm font-medium leading-5">
-                  {item.text}
-                </span>
-                <figure className="game__item-image relative">
-                  <Image
-                    src={item.image.src}
-                    alt={item.alt}
-                    width={item.image.width}
-                    height={item.image.height}
-                    blurDataURL={item.image.blurDataURL}
-                    placeholder="blur"
-                  />
-                </figure>
+              <li key={`__${key}__`} className="game__item ">
+                <div className="game__item-inner">
+                  <span className="game__item-num lg:w-12 lg:text-4xl w-8 flex justify-center flex-shrink-0 text-2xl font-bold text-center">
+                    {key + 1}
+                  </span>
+                  <span className="game__item-text py-2 lg:py-0 lg:text-xl lg:leading-6 mr-auto text-sm font-medium leading-5">
+                    {item.text}
+                  </span>
+                  <figure className="game__item-image relative">
+                    <Image
+                      src={item.image.src}
+                      alt={item.alt}
+                      width={item.image.width}
+                      height={item.image.height}
+                      blurDataURL={item.image.blurDataURL}
+                      placeholder="blur"
+                    />
+                  </figure>
+                </div>
               </li>
             ))}
           </ul>
