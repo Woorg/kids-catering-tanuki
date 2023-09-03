@@ -1,4 +1,7 @@
 .datepicker {
+  @apply w-48 lg:w-64 inline-flex rounded-[20px] lg:rounded-[39px] px-8 py-4 lg:py-7 bg-white text-center text-sm lg:text-lg  font-bold leading-[20px] text-black;
+  border: 2px solid rgba(0, 0, 0, 0.11);
+
   &__container {
   }
   &__input {
@@ -25,7 +28,7 @@
   //     }
   //   }
   .react-datepicker__input-container input {
-    @apply py-1  pl-6 lg:pl-4;
+    @apply py-1  pl-8 lg:pl-4;
     width: 100%;
     text-align: center;
   }

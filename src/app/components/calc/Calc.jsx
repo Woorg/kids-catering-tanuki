@@ -46,23 +46,21 @@ const Calc = ({ className }) => {
   };
 
   const guestsMarks = {
-    2: "2",
+    0: "2",
     15: "15",
     30: "30",
   };
 
   const hoursMarks = {
-    1: "1",
+    0: "1",
     4: "4",
     8: "8",
   };
 
-  // const Handle = Slider.Handle;
-
   const [openPopup, setOpenPopup] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [selectedType, setSelectedType] = useState("Анимационная программа");
-  const [guests, setQuests] = useState(15);
+  const [guests, setGuests] = useState(15);
   const [hours, setHours] = useState(4);
   const [totalPrice, setTotalPrice] = useState(""); // Add a state variable for the total price
 
@@ -91,14 +89,25 @@ const Calc = ({ className }) => {
   useEffect(() => {
     // Call the calculateTotalPrice function whenever any of the relevant state variables change
     calculateTotalPrice();
-  }, [selectedType, guests, hours]);
+  }, [calculateTotalPrice, selectedType, guests, hours]);
 
   const onChangeGuests = (guests) => {
-    setQuests(guests);
+    if (guests < 2) {
+      setGuests(2);
+    } else {
+      setGuests(guests);
+    }
+
+    console.log("Guests", guests);
   };
 
   const onChangeHours = (hours) => {
-    setHours(hours);
+    if (hours < 1) {
+      setHours(1);
+    } else {
+      setHours(hours);
+    }
+    console.log("Hours", hours);
   };
 
   const showData = () => {
@@ -106,13 +115,10 @@ const Calc = ({ className }) => {
     // console.log("Date:", startDate);
     // console.log("Type:", selectedType);
     // console.log("PricePerHour:", totalPrice);
-    // console.log("Hours", hours);
-    // console.log("Guests", guests);
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // console.log("submit");
   };
 
   return (
@@ -127,7 +133,7 @@ const Calc = ({ className }) => {
           onSubmit={onSubmit}
         >
           <div className="calc__row form__row form__field form__field_datepicker mb-6 lg:mb-10">
-            <div className="calc__datepicker datepicker w-44 lg:w-64 inline-flex rounded-[39px] px-8 py-4 lg:py-7 bg-white text-center text-sm lg:text-lg  font-bold leading-[20px]">
+            <div className="calc__datepicker datepicker">
               <div className="datepicker__container flex items-center relative">
                 <span className="datepicker__icon absolute top-1/2 left-0 -mt-3  lg:-mt-4 z-10">
                   <DatePickerIcon className="w-6 h-6 lg:w-8 lg:h-8 " />
@@ -136,39 +142,26 @@ const Calc = ({ className }) => {
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
-                    // dayClassName={() => "example-datepicker-day-class"}
-                    // popperClassName="example-datepicker-class"
-                    // todayButton="TODAY"
+                    locale="ru"
                   />
                 </span>
               </div>
-              {/* <DatePicker
-              locale="ru"
-              showIcon="true"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-            /> */}
             </div>
           </div>
 
           <section className="calc__row calc__types form__row mb-6 lg:mb-10 ">
-            <h3 className="calc__row-title mb-4 text-center text-base lg:text-lg font-bold leading-5 text-white">
-              тип программы
-            </h3>
-            <div className="calc__types-w grid grid-cols-2 gap-y-4 lg:gap-y-0 sm:flex md:justify-center items-center flex-wrap">
+            <h3 className="calc__row-title">тип программы</h3>
+            <div className="calc__types-w ">
               {data.form.types.map((type, key) => (
                 <div
                   key={`__${key}__`}
                   className={clsx(
-                    "calc__type form__field form__field_radio transition-colors w-[168px] h-[93px] lg:w-[222px] lg:h-[130px]",
+                    "calc__type form__field form__field_radio transition-colors  ",
                     `calc__type_ ${type.css}`,
                     selectedType === type.name ? " calc__type_selected" : ""
                   )}
                 >
-                  <label
-                    className="calc__type-label form__label flex items-center transition-colors py-6 px-6  lg:py-10 lg:px-10 justify-center  text-center text-sm lg:text-lg text-white font-bold 
-              leading-5"
-                  >
+                  <label className="calc__type-label form__label">
                     <span className="calc__type-text form__label-text">
                       {type.name}
                     </span>
@@ -187,50 +180,38 @@ const Calc = ({ className }) => {
             </div>
           </section>
 
-          <div className="calc__row mb-4 lg:mb-6">
-            <div className="calc__row-title mb-2 lg:mb-4 text-center text-base lg:text-lg font-bold leading-5 text-white">
-              Количество гостей
-            </div>
+          <div className="calc__row mb-14 lg:mb-6">
+            <div className="calc__row-title ">Количество гостей</div>
             <div className="calc__slider calc__slider_guests">
               <Slider
-                min={2}
+                min={0}
                 max={30}
-                step={null}
+                // step={1}
                 marks={guestsMarks}
                 // startPoint={2}
-                // defaultValue={15}
-                // reverse={true}
-                allowCross={true}
                 value={guests}
                 onChange={onChangeGuests}
               />
             </div>
           </div>
 
-          <div className="calc__row mb-4 lg:mb-6 ">
-            <div className="calc__row-title mb-2 lg:mb-4 text-center text-base lg:text-lg font-bold leading-5 text-white">
-              Продолжительность/час
-            </div>
+          <div className="calc__row mb-14 lg:mb-6">
+            <div className="calc__row-title">Продолжительность/час</div>
             <div className="calc__slider calc__slider_hours">
               <Slider
-                min={1}
+                min={0}
                 max={8}
-                step={null}
+                // step={1}
                 marks={hoursMarks}
-                allowCross={true}
-                // keyboard={true}
-                // startPoint={4}
-                defaultValue={4}
+                value={hours}
+                // startPoint={1}
                 onChange={onChangeHours}
-                // handle={Handle}
               />
             </div>
           </div>
 
           <section className="calc__row flex flex-col cen calc__total form__row ">
-            <h3 className="calc__row-title mb-2 lg:mb-4 text-center text-base lg:text-lg font-bold leading-5 text-white">
-              Приблизительная стоимость:
-            </h3>
+            <h3 className="calc__row-title">Приблизительная стоимость:</h3>
             <div className="calc__price-w leading-none  flex justify-center items-center flex-wrap gap-2">
               <span className="calc__price text-[42px] lg:text-[62px] text-white font-seymour">
                 {totalPrice}
