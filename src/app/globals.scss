@@ -1,8 +1,8 @@
-@import "../../public/assets/styles/style.scss";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "../../public/assets/styles/style.scss";
 
 @layer base {
   :root {
