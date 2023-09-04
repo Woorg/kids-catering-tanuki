@@ -2,6 +2,7 @@
   &__title {
   }
   &__form {
+    // @apply bg-blue;
   }
 
   &__row {
@@ -67,15 +68,14 @@
 
   &__slider {
     position: relative;
-    @apply lg:mb-20;
+    @apply mr-2 lg:mb-20;
     // margin: 20px;
 
     .rc-slider {
       @apply w-full h-[48px] lg:h-[60px];
     }
     .rc-slider-rail {
-      @apply h-[48px]  lg:h-[60px]  bg-transparent rounded-2xl;
-      width: calc(100% + 8px);
+      @apply w-[calc(100%+8px)] h-[48px]  lg:h-[60px]  bg-transparent rounded-2xl;
 
       border: 1.5px solid rgba(255, 255, 255, 0.8);
       @include vp-1024 {
