@@ -8,14 +8,16 @@ import ShowTypeIcon from "../icons/ShowTypeIcon";
 import RubIcon from "../icons/RubIcon";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import ru from "date-fns/locale/ru";
 registerLocale("ru", ru);
-
 import "react-datepicker/dist/react-datepicker.css";
 import Popup from "@components/popup/Popup";
+import useModal from "../../hooks/useModal";
+
 const Calc = ({ className }) => {
+  const modal = useModal();
+
   const data = {
     title: "Калькулятор праздника",
 
@@ -57,7 +59,6 @@ const Calc = ({ className }) => {
     8: "8",
   };
 
-  const [openPopup, setOpenPopup] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [selectedType, setSelectedType] = useState("Анимационная программа");
   const [guests, setGuests] = useState(15);
@@ -98,7 +99,7 @@ const Calc = ({ className }) => {
       setGuests(guests);
     }
 
-    console.log("Guests", guests);
+    // console.log("Guests", guests);
   };
 
   const onChangeHours = (hours) => {
@@ -111,7 +112,7 @@ const Calc = ({ className }) => {
   };
 
   const showData = () => {
-    setOpenPopup(!openPopup);
+    modal.open;
     // console.log("Date:", startDate);
     // console.log("Type:", selectedType);
     // console.log("PricePerHour:", totalPrice);
@@ -223,13 +224,12 @@ const Calc = ({ className }) => {
           <button
             className="calc__button mt-6 lg:mt-10 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
             aria-label="Отправить заявку"
-            onClick={showData}
+            onClick={modal.open}
           >
             Отправить заявку
           </button>
         </form>
       </div>
-      {openPopup && <Popup visible={setOpenPopup} />}
     </>
   );
 };

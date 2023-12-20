@@ -11,8 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { useState } from "react";
-import Popup from "@components/popup/Popup";
+import useModal from "../../hooks/useModal";
 
 const PartyHorn = () => {
   const data = {
@@ -35,7 +34,7 @@ const PartyHorn = () => {
     ],
   };
 
-  const [openPopup, setOpenPopup] = useState(false);
+  const modal = useModal();
 
   return (
     <>
@@ -85,14 +84,13 @@ const PartyHorn = () => {
           <button
             className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white bg-black rounded-full"
             aria-label="Заказать праздник"
-            onClick={() => setOpenPopup(!openPopup)}
+            onClick={modal.open}
           >
             Заказать праздник
           </button>
           <HornIcon className="absolute w-[142px] h-[112px] lg:w-[324px] lg:h-[257px] left-0 z-10 bottom-[114px] lg:bottom-10" />
         </Container>
       </section>
-      {openPopup && <Popup visible={setOpenPopup} />}
     </>
   );
 };

@@ -12,8 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import Popup from "@components/popup/Popup";
-import { useState } from "react";
+import useModal from "../../hooks/useModal";
 
 const PartyTanuki = () => {
   const data = {
@@ -36,7 +35,7 @@ const PartyTanuki = () => {
     ],
   };
 
-  const [openPopup, setOpenPopup] = useState(false);
+  const modal = useModal();
 
   return (
     <>
@@ -85,7 +84,7 @@ const PartyTanuki = () => {
           <button
             className="party__button  mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl bg-blue inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white rounded-full"
             aria-label="Заказать праздник"
-            onClick={() => setOpenPopup(!openPopup)}
+            onClick={modal.open}
           >
             Заказать праздник
           </button>
@@ -93,8 +92,6 @@ const PartyTanuki = () => {
           <CaspianIconTwo className="absolute w-[99px] h-[71px] lg:w-[199px] lg:h-[144px] left-0 lg:left-auto lg:right-14 z-10 bottom-28 lg:bottom-28" />
         </Container>
       </section>
-
-      {openPopup && <Popup visible={setOpenPopup} />}
     </>
   );
 };

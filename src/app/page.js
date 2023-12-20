@@ -1,5 +1,5 @@
+// "use client";
 // import clsx from "clsx";
-
 import Atmosphere from "./components/atmosphere/Atmosphere";
 import Faq from "./components/faq/Faq";
 import Game from "./components/game/Game";
@@ -10,13 +10,7 @@ import PartyCaspian from "./components/party/PartyCaspian";
 import PartyHorn from "./components/party/PartyHorn";
 import Testimonials from "./components/testimonials/Testimonials";
 import ToyChips from "./components/toyChips/ToyChips";
-// import Image from "next/image";
-
-// export const metadata = {
-//   title: "Детские праздникис «Tануки» Home",
-//   description:
-//     "На вашем празднике будет настоящая, яркая Звездочка. Она появилась специально, чтобы вы загадали своё самое заветное желание. Звездочка знает секрет: как правильно мечтать и загадывать, чтобы наверняка сбылось.",
-// };
+import Popup from "./components/popup/Popup";
 
 export default async function Home() {
   return (
@@ -32,6 +26,7 @@ export default async function Home() {
         <ToyChips />
         <Atmosphere />
         <Faq />
+        <Popup />
       </div>
     </>
   );

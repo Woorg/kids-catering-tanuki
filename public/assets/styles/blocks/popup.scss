@@ -1,5 +1,6 @@
 .popup {
   &__bg {
+    @apply fixed top-0 left-0 w-full h-full;
   }
   &__container {
     @apply m-auto w-[343px] h-[491px] lg:w-[794px] lg:h-[664px]  pt-12 lg:pt-[60px] pb-14 lg:pb-[63px] px-5 lg:px-24 bg-transparent;

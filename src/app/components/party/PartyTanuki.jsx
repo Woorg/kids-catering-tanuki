@@ -6,13 +6,13 @@ import SliderImgOne from "@images/content/party/tanuki/img-1.webp";
 import SliderImgTwo from "@images/content/party/tanuki/img-2.webp";
 import SliderImgThree from "@images/content/party/tanuki/img-3.webp";
 import Button from "@components/ui/button/Button";
-import Popup from "@components/popup/Popup";
 import Bear from "@images/content/bears/bear-1.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { useState } from "react";
+import useModal from "../../hooks/useModal";
+
 const PartyTanuki = () => {
   const data = {
     title: "Праздник в стиле Тануки",
@@ -34,7 +34,7 @@ const PartyTanuki = () => {
     ],
   };
 
-  const [openPopup, setOpenPopup] = useState(false);
+  const modal = useModal();
 
   return (
     <>
@@ -83,7 +83,7 @@ const PartyTanuki = () => {
           <button
             className="party__button mt-11 lg:mt-20 lg:px-14 lg:py-7 lg:text-2xl bg-red inline-flex items-center justify-center px-10 py-6 text-lg font-bold tracking-tight text-center text-white rounded-full"
             aria-label="Заказать праздник"
-            onClick={() => setOpenPopup(!openPopup)}
+            onClick={modal.open}
           >
             Заказать праздник
           </button>
@@ -99,7 +99,6 @@ const PartyTanuki = () => {
           </figure>
         </Container>
       </section>
-      {openPopup && <Popup visible={setOpenPopup} />}
     </>
   );
 };
